@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  
+  <!-- Favicons -->
+  <link rel="icon shortcut" type="image/ico" href="/">
+  <link rel="icon" sizes="192x192" href="/">
+  <link rel="apple-touch-icon" href="/">
+
+  <!-- Meta & Info -->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#fff">
+  <meta name="author" content="PGambler">
+    
+  <meta name="keywords" content="hexo, blog,CORS,JAVA">
+
+  <!--iOS -->
+  <meta name="apple-mobile-web-app-title" content="PGambler">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="480">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  
+  <title></title>
+
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/880bc416b5.js" crossorigin="anonymous"></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+  <body class="font-sans text-xs sm:text-sm lg:text-base">
+    <div class="flex flex-col items-center w-full h-full py-8 bg-gray-200">
+      <div class="w-3/4 border rounded-lg tracking-wide leading-normal break-all p-8 bg-white">
+        <div class="bg-blue-800 rounded-lg my-4 p-4">
+          <p>源码路径：<%- path %> </p>
+          <p>创建时间：<%- ctime %> </p>
+          <p>最后修改时间：<%- mtime %> </p>
+        </div>
+        <% comms.forEach((comm, i)=> { %> 
+          <div class="bg-gray-600 my-4 p-4">
+            <p>名称：<%- comm.name %></p>
+            <p>描述：<%- comm.desc %></p>
+            <p>返回：<%- comm.rtn %> </p>
+            <p>参数列表：</p>
+            <table class="w-full border" cellpadding="2" cellspacing="0" >
+              <th class="border">名称</th>
+              <th class="border">描述</th>
+              <th class="border">默认</th>
+            <% (comm.params || []).forEach((p, j)=> { %>
+              <tr>
+                <td class="border"><%- p.nm %></td>
+                <td class="border"><%- p.desc %></td>
+                <td class="border">无</td>
+              </tr>
+            <% }) %> 
+            </table>
+          </div>
+        <% }) %> 
+      </div>
+    </div>    
+  </body>
+</html>

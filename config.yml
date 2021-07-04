@@ -1,0 +1,4 @@
+# 全局配置
+source: target # 源目录
+target: doc # 文档生成目录
+
